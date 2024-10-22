@@ -29,7 +29,6 @@ public class AnalyticsCounter {
 	
 	
 	//méthode pour calculer les occurences de chaque symptome
-	
 	public Map<String, Integer> countSymptoms(List<String>symptoms){
 		Map<String, Integer> symptomCount = new HashMap<>();
 		
@@ -37,23 +36,19 @@ public class AnalyticsCounter {
 			symptomCount.put(symptom, symptomCount.getOrDefault(symptom, 0)+1);
 		}
 	    return symptomCount;
-		
 	}
 	
 	
 	//méthode pour trier les symptomes par ordre alphabetique
-	
 	public Map<String, Integer> sortSymptoms(Map<String, Integer>symptoms) {
 		
 		//utilisation d'une treeMap pour un tri naturel des symptomes
-		
 		Map<String, Integer> sortedSymptoms = new TreeMap<>(symptoms);
 		return sortedSymptoms;
 	}
 	
 	
 	//méthode pour ecrire les symptomes dans le fichier de sortie
-	
 	public void writeSymptoms(Map<String, Integer> symptoms) {
 		symptomWriter.writeSymptoms(symptoms);
 	}

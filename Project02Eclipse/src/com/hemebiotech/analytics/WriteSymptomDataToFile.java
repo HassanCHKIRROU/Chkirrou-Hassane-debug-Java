@@ -29,11 +29,11 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 				String line = entry.getKey()+": "+entry.getValue();
 				writer.write(line);
 				//Skip the line
-				writer.newLine(); 
+				//writer.newLine(); 
 				writer.newLine(); 
 				
 			}
-			System.out.println("The symptoms are written in the file:  "+""+myFile+"");
+			System.out.println("The symptoms are written in the file: "+"'"+myFile+"'");
 			
 		//Error handling in case of writing error	
 		}catch(IOException e) {
