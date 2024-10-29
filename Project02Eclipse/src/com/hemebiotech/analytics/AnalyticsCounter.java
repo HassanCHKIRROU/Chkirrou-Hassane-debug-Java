@@ -6,29 +6,26 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class AnalyticsCounter {
-  
-	//les attributs pour stocker les instances de ISymptomReader et ISymptomWriter
 	
-    private ISymptomReader symptomReader;
+    //attributes to store instances of ISymptomReader and ISymptomWriter
+	private ISymptomReader symptomReader;
 	private ISymptomWriter symptomWriter;
 	
 	
-	// le constructeur qui va initialiser writer et reader
-	
+	// the constructor that will initialize writer and reader
 	public AnalyticsCounter (ISymptomReader reader, ISymptomWriter writer) {
 		this.symptomReader = reader;
 		this.symptomWriter = writer;
 	}
 	
 	
-	//methode pour recuperer la liste des symptoms à partir de reader
-	
+	//method to retrieve list of symptoms from reader
 	public List<String> getSymptoms(){
 	    return symptomReader.getSymptoms(); 
 	}
 	
 	
-	//méthode pour calculer les occurences de chaque symptome
+	//method for calculating the occurrences of each symptom
 	public Map<String, Integer> countSymptoms(List<String>symptoms){
 		Map<String, Integer> symptomCount = new HashMap<>();
 		
@@ -39,20 +36,18 @@ public class AnalyticsCounter {
 	}
 	
 	
-	//méthode pour trier les symptomes par ordre alphabetique
+	//method for sorting symptoms alphabetically
 	public Map<String, Integer> sortSymptoms(Map<String, Integer>symptoms) {
 		
-		//utilisation d'une treeMap pour un tri naturel des symptomes
+		//using a treeMap for natural sorting of symptoms
 		Map<String, Integer> sortedSymptoms = new TreeMap<>(symptoms);
 		return sortedSymptoms;
 	}
 	
 	
-	//méthode pour ecrire les symptomes dans le fichier de sortie
+	//method to write symptoms to output file
 	public void writeSymptoms(Map<String, Integer> symptoms) {
 		symptomWriter.writeSymptoms(symptoms);
-	}
-	
-	
+	} 
 	
 } 
