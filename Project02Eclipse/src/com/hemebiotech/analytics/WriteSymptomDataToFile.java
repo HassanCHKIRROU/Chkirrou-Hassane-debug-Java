@@ -5,10 +5,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-
+/**
+ * The WriteSymptomDataToFile class is an implementation of ISymptomWriter that writes symptom data to a file.
+ * This class takes a map of symptoms with their respective occurrence counts and writes them to an output file.
+ */
 public class WriteSymptomDataToFile implements ISymptomWriter {
 	
-	// Implementation of the writeSymptoms method
+	/**
+     * Writes the given map of symptoms and their occurrence counts to a file (result.out).
+     * Each symptom is written on a new line in the format: "symptom : count".
+     *
+     * @param symptoms a map containing symptoms as keys and their occurrence counts as values
+     */
 	@Override
 	public void writeSymptoms(Map<String, Integer>symptoms) {
 		

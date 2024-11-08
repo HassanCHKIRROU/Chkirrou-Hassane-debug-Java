@@ -3,9 +3,12 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The Main class serves as the entry point for the application.
+ */
 public class Main {
 	
-
+    
 	public static void main(String[] args) {
 		
 		//creating an ISymptomReader object to read data from the symptoms.txt file
